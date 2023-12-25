@@ -8,3 +8,4 @@ export const initialStatePost = {
     title: '',
     body: ''
 }
+
