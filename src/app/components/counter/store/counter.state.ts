@@ -1,7 +1,6 @@
-// export class Counter{
-//     count? : number;
-//     name?: string;
-// }
-export const initialState = {
+export class Counter {
+    count?: number;
+}
+export const initialState: Counter = {
     count: 0
 }
