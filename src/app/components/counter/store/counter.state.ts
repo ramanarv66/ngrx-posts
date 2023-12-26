@@ -1,6 +1,6 @@
-export class Counter {
-    count?: number;
+export interface Counter {
+    count: number;
 }
 export const initialState: Counter = {
-    count: 0
+    count: 1
 }

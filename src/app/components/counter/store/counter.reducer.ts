@@ -1,5 +1,5 @@
 import { createReducer, on } from "@ngrx/store";
-import { incrementCounterAction } from "./counter.action";
+import { incrementCounterAction, incrementCounterActionInput } from "./counter.action";
 import { initialState } from "./counter.state";
 
 export const counterReducer = createReducer(initialState, on(
@@ -10,4 +10,14 @@ export const counterReducer = createReducer(initialState, on(
 
         }
     }
-))
+),
+on(
+    incrementCounterActionInput, (state,action)=>{
+        return{
+            ...state,
+            count: state.count? action.input + state.count: 99
+
+        }
+    }
+)
+)

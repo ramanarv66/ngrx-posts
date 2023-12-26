@@ -11,6 +11,7 @@ import { CounterComponent } from './components/counter/counter.component';
 import { StoreModule } from '@ngrx/store';
 import { counterReducer } from './components/counter/store/counter.reducer';
 import { postReducer } from './components/posts/store/posts.reducer';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { postReducer } from './components/posts/store/posts.reducer';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     StoreModule.forRoot({cReducer: counterReducer, pReducer: postReducer})
   ],
   providers: [

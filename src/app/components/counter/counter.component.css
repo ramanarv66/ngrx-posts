@@ -4,4 +4,15 @@
     border-radius: 20px;
     padding: 5px 10px;
     width: 300px;
+    margin-left: 40px
+}
+span{
+    border: 2px solid burlywood;
+    background-color: rgb(1, 61, 61);
+    margin: 20px 30px;
+    border-radius: 50%;
+    color:white;
+    font-size: 10px;
+    padding: 2px;
+    width: 50px;
 }
