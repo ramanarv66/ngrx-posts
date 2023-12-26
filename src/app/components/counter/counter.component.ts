@@ -15,7 +15,7 @@ export class CounterComponent implements OnInit {
   ngOnInit(): void {
     this.store.select('cReducer').subscribe((data) => {
       console.log(data)
-      this.val = data.count;
+      this.val = data.count? data.count:-1;
     })
   }
   increment() {

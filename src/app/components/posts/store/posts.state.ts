@@ -1,12 +1,12 @@
 export class Posts {
-    id?: number ;
+    id?: number;
     title?: string = '';
     body?: string = '';
 }
-export const initialStatePost: Posts= { 
-    id:1,
+export const initialStatePost: Posts = {
+    id: 1,
     title: 'test',
     body: 'ram',
-   
+
 }
 

@@ -3,8 +3,9 @@
     border: 2px solid lightgray;
     border-radius: 20px;
     padding: 5px 10px;
-    width: 300px;
+    width: 500px;
     margin-left: 30px;
+    box-sizing: border-box;
 }
 
 .btn1 {
@@ -26,5 +27,21 @@
     display: flex;
     align-items: center;
     gap: 10px;
-
+    box-sizing: border-box;
+    margin-top: 20px;
+    
+}
+.input1{
+    width: 300px;
+    border: 2px solid lightgray;
+    border-radius: 10px;
+    padding: 5px 10px;
+    color: black;
+}
+.inputs{
+    display: flex;
+    justify-content: flex-start;
+}
+.mb-3{
+    margin-bottom: 3px;
 }
