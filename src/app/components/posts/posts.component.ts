@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { addPostInput, getAllPostsAction } from './store/posts.action';
-import { Posts } from './store/posts.state';
+import { Post } from './store/posts.state';
 
 @Component({
   selector: 'app-posts',
@@ -13,7 +13,7 @@ export class PostsComponent implements OnInit {
   title: string='';
   body: string=''
   constructor(private store: Store<{
-    pReducer: Posts
+    pReducer: Post
   }>) { }
 
   ngOnInit(): void {
@@ -29,7 +29,7 @@ export class PostsComponent implements OnInit {
     this.store.dispatch(getAllPostsAction())
   }
   addProduct(){
-    let post = new Posts();
+    let post = new Post();
     post.body = this.body;
     post.title = this.title;
     this.store.dispatch(addPostInput({eachPost: post}))

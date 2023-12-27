@@ -12,6 +12,8 @@ import { StoreModule } from '@ngrx/store';
 import { counterReducer } from './components/counter/store/counter.reducer';
 import { postReducer } from './components/posts/store/posts.reducer';
 import { FormsModule } from '@angular/forms';
+import { BookComponent } from './components/book/book.component';
+import { booksReducer } from './components/book/state/book.reducer';
 
 @NgModule({
   declarations: [
@@ -20,13 +22,14 @@ import { FormsModule } from '@angular/forms';
     AddPostComponent,
     DeletePostComponent,
     EditPostComponent,
-    CounterComponent
+    CounterComponent,
+    BookComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    StoreModule.forRoot({cReducer: counterReducer, pReducer: postReducer})
+    StoreModule.forRoot({cReducer: counterReducer, pReducer: postReducer, bReducer: booksReducer})
   ],
   providers: [
     provideClientHydration()
