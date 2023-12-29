@@ -1,0 +1,47 @@
+<h3>Update Course detais</h3>
+<!-- courseid: string,
+    coursenName: string,
+    teacher: string,
+    description: string -->
+<!-- <form>
+    <label>Course ID</label>
+    <input type="text" class="form-control" [(ngModel)]="test.courseid" name="id">
+    <label>Course Name</label>
+    <input type="text" class="form-control" [(ngModel)]="test.coursenName" name="name">
+    <label>Course Teacher</label>
+    <input type="text" class="form-control" [(ngModel)]="test.teacher" name="teacher">
+    <label>Course description</label>
+    <input type="text" class="form-control" [(ngModel)]="test.description" name="description"> 
+
+    <button class="btn btn-danger" (click)="update">Update</button>
+</form> -->
+
+
+<form [formGroup]="courseForm" (ngSubmit)="onUpdateCourse()">
+    <div class="mb-3">
+        <label>Id</label>
+        <input type="text" class="form-control" formControlName="courseid" />
+
+
+    </div>
+    <div class="mb-3">
+        <label>CourseName</label>
+        <textarea class="form-control" formControlName="coursenName"></textarea>
+    </div>
+    <div class="mb-3">
+        <label>Teacher</label>
+        <textarea class="form-control" formControlName="teacher"></textarea>
+    </div>
+    <div class="mb-3">
+        <label>description</label>
+        <textarea class="form-control" formControlName="description"></textarea>
+    </div>
+
+    <div class="my-3">
+        <button type="submit" class="btn btn-primary">
+            Update Course
+        </button>
+    </div>
+</form>
+
+

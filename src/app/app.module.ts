@@ -1,19 +1,19 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { StoreModule } from '@ngrx/store';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { PostsComponent } from './components/posts/posts.component';
+import { AppReducer } from './app.state';
+import { CounterComponent } from './components/counter/counter.component';
 import { AddPostComponent } from './components/posts/add-post/add-post.component';
 import { DeletePostComponent } from './components/posts/delete-post/delete-post.component';
 import { EditPostComponent } from './components/posts/edit-post/edit-post.component';
-import { CounterComponent } from './components/counter/counter.component';
-import { StoreModule } from '@ngrx/store';
-import { counterReducer } from './components/counter/store/counter.reducer';
-import { postReducer } from './components/posts/store/posts.reducer';
-import { FormsModule } from '@angular/forms';
-import { BookComponent } from './components/book/book.component';
-import { booksReducer } from './components/book/state/book.reducer';
+import { PostsComponent } from './components/posts/posts.component';
+import { CourseComponent } from './components/course/course.component';
+import { AddCourseComponent } from './components/course/add-course/add-course.component';
+import { UpdateCourseComponent } from './components/course/update-course/update-course.component';
 
 @NgModule({
   declarations: [
@@ -23,13 +23,17 @@ import { booksReducer } from './components/book/state/book.reducer';
     DeletePostComponent,
     EditPostComponent,
     CounterComponent,
-    BookComponent
+    CourseComponent,
+    AddCourseComponent,
+    UpdateCourseComponent
   ],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     FormsModule,
-    StoreModule.forRoot({cReducer: counterReducer, pReducer: postReducer, bReducer: booksReducer})
+    // StoreModule.forRoot({cReducer: counterReducer, pReducer: postReducer, bReducer: booksReducer, courseReducer: getCourseReducer})
+    StoreModule.forRoot(AppReducer)
   ],
   providers: [
     provideClientHydration()

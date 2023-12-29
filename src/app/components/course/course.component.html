@@ -1,0 +1,31 @@
+<button class="btn btn-success button1" (click)="add()">Add Course</button>
+<div class="flext-box">
+  <div class="table-class">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">id</th>
+          <th scope="col">Name</th>
+          <th scope="col">Teacher</th>
+          <th scope="col">description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let course of courses">
+          <th scope="row">{{ course.courseid }}</th>
+          <td>{{ course.coursenName }}</td>
+          <td>{{ course.teacher }}</td>
+          <td>{{ course.description }}</td>
+          <td>
+            <button class="btn btn-primary btn1" (click)="edit(course.courseid)">Edit</button>
+          </td>
+          <td><button class="btn btn-success btn1" (click)="delete(course.courseid)">Delete</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="update-course">
+    <router-outlet></router-outlet>
+  </div>
+</div>

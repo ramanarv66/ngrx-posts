@@ -1,0 +1,25 @@
+.table-class{
+    border: 2px solid lightgray;
+    border-radius: 25px;
+    width: 50%;
+}
+.update-course{
+    border: 2px solid red;
+    border-radius: 25px;
+    width: 50%;
+    padding: 30px;
+    
+}
+.flext-box{
+    display: flex;
+    gap: 10px;
+    margin-top: 60px;
+    margin-right: 40px;
+    margin-left: 40px;
+}
+.button1{
+    width: 40%;
+    margin-top: 30px;
+    margin-left: 80px;
+
+}

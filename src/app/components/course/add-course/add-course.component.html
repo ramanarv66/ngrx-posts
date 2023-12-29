@@ -1,0 +1,15 @@
+<form [formGroup]="addCourseForm" (ngSubmit)="onAddCourse()">
+    <label class="mb-3">courseID</label>
+    <input type="text" class="form-control" formControlName="courseid">
+    <label class="mb-3">CourseName</label>
+    <input type="text" class="form-control" formControlName="coursenName">
+    <label class="mb-3">Teacher</label>
+    <input type="text" class="form-control" formControlName="teacher">
+    <label class="mb-3">description</label>
+    <input type="text" class="form-control" formControlName="description">
+    <div class="my-3">
+        <button type="submit" class="btn btn-danger">
+            Add Course
+        </button>
+    </div>
+</form>
