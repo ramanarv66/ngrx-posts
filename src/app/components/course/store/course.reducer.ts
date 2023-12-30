@@ -7,6 +7,7 @@ import {
   getCourseAction,
   getCourseActionSuccess,
   updateCourseAction,
+  updateCourseActionSuccessWithEffect,
 } from './course.action';
 
 // export const getCourseReducer = createReducer(
@@ -76,7 +77,18 @@ export const _courseReducer = createReducer(
       }
     }
 
-  )
+  ),
+  on(updateCourseActionSuccessWithEffect, (state, action)=>{
+    let updatedCourse = action.courses;
+
+    let tempCourses = state.courses.map((a)=>{
+      return( a.id == Number(updatedCourse.courseid) || a.id == Number(updatedCourse.courseid))? action.courses: a
+    })
+    return{
+      ...state,
+      courses: tempCourses
+    }
+  })
   // on(addCourseAction, (state, action) => {
   //   return {
   //     ...state,

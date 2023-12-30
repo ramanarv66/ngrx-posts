@@ -30,7 +30,7 @@ export class CourseComponent implements OnInit {
     this.router.navigate(['add']);
   }
 
-  delete(id: string) {
+  delete(id: any) {
     this.store.dispatch(deleteCourseAction({ courseid: id }));
 
     // this.store.select(getCoursesSelector).subscribe((data) => {

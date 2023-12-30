@@ -25,4 +25,7 @@ export class CourseService {
   getCourses(): Observable<course[]> {
     return this.http.get<course[]>(this.url);
   }
+  updateCourse(course: course): Observable<course>{
+    return this.http.put<course>(this.url+'/'+course.courseid, course)
+  }
 }

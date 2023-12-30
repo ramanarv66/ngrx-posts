@@ -5,7 +5,7 @@ export const getCourseAction = createAction(
   '[getCourseAction] in course action'
 );
 export const getCourseActionSuccess = createAction(
-  '[getCourseActionSuccess] in course action', props<{courses: course[]}>()
+  '[getCourseActionSuccess] in course action', props<{ courses: course[] }>()
 );
 export const updateCourseAction = createAction(
   '[updateCourseAction] in course action',
@@ -23,3 +23,6 @@ export const addCourseSuccessAction = createAction(
   '[addCourseSuccessAction] in course action',
   props<{ addCourse: course }>()
 );
+
+export const updateCourseActionWithEffect = createAction('[updateCourseActionWithEffect], in course action', props<{ updateCourse: course }>())
+export const updateCourseActionSuccessWithEffect = createAction('[updateCourseActionSuccessWithEffect], in course action', props<{ courses: course }>())

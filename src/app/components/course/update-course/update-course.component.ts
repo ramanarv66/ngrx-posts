@@ -4,7 +4,7 @@ import { Store } from '@ngrx/store';
 import { AppState } from '../../../app.state';
 import { course } from '../store/course.state';
 import { getCoursesSelector } from '../store/course.selector';
-import { updateCourseAction } from '../store/course.action';
+import { updateCourseAction, updateCourseActionWithEffect } from '../store/course.action';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 
 @Component({
@@ -67,6 +67,6 @@ export class UpdateCourseComponent implements OnInit {
   }
 
   update() {
-    this.store.dispatch(updateCourseAction({ updatedCourse: this.courseForm.value}));
+    this.store.dispatch(updateCourseActionWithEffect({ updateCourse: this.courseForm.value}));
   }
 }

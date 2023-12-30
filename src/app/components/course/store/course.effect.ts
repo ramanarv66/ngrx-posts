@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { CourseService } from '../course-service';
-import { addCourseAction, addCourseSuccessAction, getCourseAction, getCourseActionSuccess } from './course.action';
+import { addCourseAction, addCourseSuccessAction, getCourseAction, getCourseActionSuccess, updateCourseActionSuccessWithEffect, updateCourseActionWithEffect } from './course.action';
 import { map, mergeMap } from 'rxjs';
 import { course } from './course.state';
 
@@ -23,16 +23,16 @@ export class CourseEffect {
   // );
 
   getCourses$ = createEffect(
-    ():any => {
+    (): any => {
       return this.action$.pipe(ofType(getCourseAction),
-      mergeMap((action)=>{
-        return this.courseService.getCourses().pipe(map((data: course[])=>{
-          return getCourseActionSuccess({courses: data});
-        }))
-      }
+        mergeMap((action) => {
+          return this.courseService.getCourses().pipe(map((data: course[]) => {
+            return getCourseActionSuccess({ courses: data });
+          }))
+        }
+        )
       )
-      )
-     }, {}
+    }, {}
   )
 
   addCourse$ = createEffect((): any => {
@@ -48,4 +48,18 @@ export class CourseEffect {
       })
     );
   });
+
+  updateCourse$ = createEffect(
+    (): any => {
+      return this.action$.pipe(ofType(updateCourseActionWithEffect),
+        mergeMap((action) => {
+          return this.courseService.updateCourse(action.updateCourse).pipe(
+            map((data: course) => {
+              return updateCourseActionSuccessWithEffect({ courses: data })
+            })
+          )
+        }))
+    }, {}
+  )
+
 }
