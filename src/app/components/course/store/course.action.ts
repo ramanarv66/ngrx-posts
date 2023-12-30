@@ -26,3 +26,6 @@ export const addCourseSuccessAction = createAction(
 
 export const updateCourseActionWithEffect = createAction('[updateCourseActionWithEffect], in course action', props<{ updateCourse: course }>())
 export const updateCourseActionSuccessWithEffect = createAction('[updateCourseActionSuccessWithEffect], in course action', props<{ courses: course }>())
+
+export const deleteWithEffectAction = createAction('[deleteWithEffectAction] in course action', props<{id: number}>())
+export const deleteWithEffectActionSuccess = createAction('[deleteWithEffectActionSuccess] in course action', props<{id: any}>())

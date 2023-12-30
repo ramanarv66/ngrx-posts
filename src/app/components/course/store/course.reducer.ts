@@ -4,6 +4,7 @@ import {
   addCourseAction,
   addCourseSuccessAction,
   deleteCourseAction,
+  deleteWithEffectActionSuccess,
   getCourseAction,
   getCourseActionSuccess,
   updateCourseAction,
@@ -78,15 +79,25 @@ export const _courseReducer = createReducer(
     }
 
   ),
-  on(updateCourseActionSuccessWithEffect, (state, action)=>{
+  on(updateCourseActionSuccessWithEffect, (state, action) => {
     let updatedCourse = action.courses;
 
-    let tempCourses = state.courses.map((a)=>{
-      return( a.id == Number(updatedCourse.courseid) || a.id == Number(updatedCourse.courseid))? action.courses: a
+    let tempCourses = state.courses.map((a) => {
+      return (a.id == Number(updatedCourse.courseid) || a.id == Number(updatedCourse.courseid)) ? action.courses : a
     })
-    return{
+    return {
       ...state,
       courses: tempCourses
+    }
+  }),
+  on(deleteWithEffectActionSuccess, (state: courseState, action) => {
+    let del = action.id;
+    let freshCouresesAfterDelete = state.courses.filter((eachCourse) => {
+      return eachCourse.id != Number(action.id)
+    })
+    return {
+      ...state,
+      courses: freshCouresesAfterDelete
     }
   })
   // on(addCourseAction, (state, action) => {

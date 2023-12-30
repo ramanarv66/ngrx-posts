@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { CourseService } from '../course-service';
-import { addCourseAction, addCourseSuccessAction, getCourseAction, getCourseActionSuccess, updateCourseActionSuccessWithEffect, updateCourseActionWithEffect } from './course.action';
+import { addCourseAction, addCourseSuccessAction, deleteCourseAction, deleteWithEffectAction, deleteWithEffectActionSuccess, getCourseAction, getCourseActionSuccess, updateCourseActionSuccessWithEffect, updateCourseActionWithEffect } from './course.action';
 import { map, mergeMap } from 'rxjs';
 import { course } from './course.state';
 
@@ -56,6 +56,19 @@ export class CourseEffect {
           return this.courseService.updateCourse(action.updateCourse).pipe(
             map((data: course) => {
               return updateCourseActionSuccessWithEffect({ courses: data })
+            })
+          )
+        }))
+    }, {}
+  );
+
+  deleteCourese$ = createEffect(
+    (): any => {
+      return this.action$.pipe(ofType(deleteWithEffectAction),
+        mergeMap((action) => {
+          return this.courseService.deleteCourse(action.id).pipe(
+            map((id) => {
+              return deleteWithEffectActionSuccess({ id: action.id })
             })
           )
         }))
