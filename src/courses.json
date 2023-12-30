@@ -1,0 +1,88 @@
+{
+    "courses": [
+      {
+        "courseid": 2,
+        "coursenName": "Angular Fundamentals",
+        "teacher": "Jane Doe",
+        "description": "Learn the basics of Angular\n",
+        "id": 2
+      },
+      {
+        "courseid": 3,
+        "id": 3,
+        "coursenName": "Advanced Java Concepts",
+        "teacher": "Michael Johnson",
+        "description": "Explore advanced features and concepts in Java programming."
+      },
+      {
+        "courseid": 4,
+        "id": 4,
+        "coursenName": "Web Development with Angular",
+        "teacher": "Emily White",
+        "description": "Build modern web applications using Angular framework."
+      },
+      {
+        "courseid": 7,
+        "id": 7,
+        "coursenName": "Java EE Architecture",
+        "teacher": "Robert Miller",
+        "description": "Understanding the architecture of Java EE for enterprise applications."
+      },
+      {
+        "courseid": 8,
+        "id": 8,
+        "coursenName": "Building Scalable Angular Apps",
+        "teacher": "Alex Turner",
+        "description": "Strategies for building scalable and maintainable Angular applications."
+      },
+      {
+        "id": 222,
+        "description": "khkh",
+        "teacher": "khkj",
+        "coursenName": "tdt"
+      },
+      {
+        "id": 224,
+        "description": "khkh",
+        "teacher": "khkj",
+        "coursenName": "tdt"
+      },
+      {
+        "id": 1111,
+        "description": "ljlk",
+        "teacher": "ljlj",
+        "coursenName": "jlk"
+      },
+      {
+        "id": 878789,
+        "description": "ljlk",
+        "teacher": "ljlj",
+        "coursenName": "jlk"
+      },
+      {
+        "id": 21212,
+        "description": "valid description",
+        "teacher": "hkh",
+        "coursenName": "hkj"
+      },
+      {
+        "id": 32,
+        "description": "testing tools check",
+        "teacher": "ramana",
+        "coursenName": "testing tools"
+      },
+      {
+        "id": 33,
+        "description": "testing tools check",
+        "teacher": "ramana",
+        "coursenName": "testing tools2"
+      },
+      {
+        "id": 44,
+        "description": "jlkjlkj",
+        "teacher": "lkjl",
+        "coursenName": "lkjl",
+        "courseid": "44"
+      }
+    ]
+  }
