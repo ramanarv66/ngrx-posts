@@ -23,12 +23,12 @@ export class AddCourseComponent {
 
 
 
-  course: course= {
-    courseid: '1',
-    coursenName: "Introduction to Java Programming",
-    teacher: "John Smith",
-    description: "A comprehensive introduction to Java programming language."
-  }
+  // course: course= {
+  //   courseid: '1',
+  //   coursenName: "Introduction to Java Programming",
+  //   teacher: "John Smith",
+  //   description: "A comprehensive introduction to Java programming language."
+  // }
 
   constructor(private store: Store<AppState>){}
 
@@ -36,6 +36,7 @@ export class AddCourseComponent {
   console.log(this.addCourseForm.value)
  let courseObj: course= {
     courseid: ''+ this.addCourseForm.controls['courseid'].value,
+    id: Number( this.addCourseForm.controls['courseid'].value),
     coursenName:''+this.addCourseForm.controls['coursenName'].value,
     teacher:""+ this.addCourseForm.controls['teacher'].value,
     description:""+ this.addCourseForm.controls['description'].value

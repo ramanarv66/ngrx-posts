@@ -14,6 +14,9 @@ import { PostsComponent } from './components/posts/posts.component';
 import { CourseComponent } from './components/course/course.component';
 import { AddCourseComponent } from './components/course/add-course/add-course.component';
 import { UpdateCourseComponent } from './components/course/update-course/update-course.component';
+import { EffectsModule } from '@ngrx/effects';
+import { CourseEffect } from './components/course/store/course.effect';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -30,8 +33,10 @@ import { UpdateCourseComponent } from './components/course/update-course/update-
   imports: [
     BrowserModule,
     ReactiveFormsModule,
+    HttpClientModule,
     AppRoutingModule,
     FormsModule,
+    EffectsModule.forRoot([CourseEffect]),
     // StoreModule.forRoot({cReducer: counterReducer, pReducer: postReducer, bReducer: booksReducer, courseReducer: getCourseReducer})
     StoreModule.forRoot(AppReducer)
   ],

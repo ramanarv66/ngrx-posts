@@ -28,12 +28,7 @@ export class UpdateCourseComponent implements OnInit {
   //   teacher: 'John Smith',
   //   description: 'A comprehensive introduction to Java programming language.',
   // };
-  test1: course = {
-    courseid: '1',
-    coursenName: 'Introduction to Java Programming',
-    teacher: 'John Smith',
-    description: 'A comprehensive introduction to Java programming language.',
-  };
+ 
 
   courseForm: FormGroup = new FormGroup({
     courseid: new FormControl(''),
@@ -66,6 +61,7 @@ export class UpdateCourseComponent implements OnInit {
       coursenName: new FormControl(this.tempCourse?.coursenName),
       teacher: new FormControl(this.tempCourse?.teacher),
       description: new FormControl(this.tempCourse?.description),
+      
     });
 
   }

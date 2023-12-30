@@ -4,7 +4,7 @@ import { course, courseState } from './store/course.state';
 import { AppState } from '../../app.state';
 import { Router } from '@angular/router';
 import { getCoursesSelector } from './store/course.selector';
-import { deleteCourseAction } from './store/course.action';
+import { deleteCourseAction, getCourseAction } from './store/course.action';
 
 @Component({
   selector: 'app-course',
@@ -20,6 +20,7 @@ export class CourseComponent implements OnInit {
     this.store.select('courseReducer').subscribe((data) => {
       this.courses = data.courses;
     });
+    this.store.dispatch(getCourseAction())
   }
 
   edit(id: string) {

@@ -12,7 +12,7 @@
       </thead>
       <tbody>
         <tr *ngFor="let course of courses">
-          <th scope="row">{{ course.courseid }}</th>
+          <th scope="row">{{ course.courseid || course.id}}</th>
           <td>{{ course.coursenName }}</td>
           <td>{{ course.teacher }}</td>
           <td>{{ course.description }}</td>
